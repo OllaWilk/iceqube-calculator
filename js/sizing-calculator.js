@@ -1,22 +1,29 @@
 document.addEventListener('DOMContentLoaded', function () {
   const calculatorType = document.getElementById('calculator-type');
-  const calculatorForms = document.querySelectorAll('.calculator-form');
+  const formContainer = document.getElementById('shared-form');
+  const specificFields = document.getElementById('specific-fields');
+  const resultsFieldset = document.querySelector('.results');
+  const ambientField = document.querySelector('.ambient');
+  const resultsLegend = resultsFieldset.querySelector('legend');
+  const temperatureInfo = document.querySelector('.temperature');
 
   calculatorType.addEventListener('change', function () {
     const selectedValue = calculatorType.value;
 
-    calculatorForms.forEach((form) => {
-      form.style.display = 'none';
-    });
-
     if (selectedValue === '0') {
+      formContainer.style.display = 'none';
+      specificFields.innerHTML = '';
+      resultsLegend.textContent = '';
       return;
     }
+    const config = calculatorConfigs[selectedValue];
 
-    const formToShow = document.getElementById(selectedValue);
-
-    if (formToShow) {
-      formToShow.style.display = 'block';
+    if (config) {
+      formContainer.style.display = 'block';
+      specificFields.innerHTML = config.additionalFields || '';
+      ambientField.textContent = config.ambient;
+      temperatureInfo.innerHTML = config.temperatureInfo || '';
+      resultsLegend.textContent = config.resultsLabel;
     }
   });
 });

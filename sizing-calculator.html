@@ -10,7 +10,7 @@
 
 <body>
     <div id="sizing-calculator">
-        <h1 for="calculator-type" class="calculator-title">IceQube Sizing Calculator</h1>
+        <h1 class="calculator-title">IceQube Sizing Calculator</h1>
         <select id="calculator-type">
             <option value="0">Please Select Calculator Type</option>
             <option value="air-conditioning">Air Conditioning Calculator</option>
@@ -19,8 +19,9 @@
             <option value="heat">Heat Calculator</option>
             <option value="thermoelectric">Thermoelectric Calculator</option>
         </select>
-        <!-- Form Air Conditioning Calculator -->
-        <form id="air-conditioning" class="calculator-form" style="display: none;">
+
+        <form id="shared-form" style="display: none;">
+            <!-- Wspólne pola -->
             <div class="row-direction-2">
                 <fieldset>
                     <legend>Units</legend>
@@ -37,6 +38,7 @@
                     </select>
                 </fieldset>
             </div>
+
             <fieldset class="row-direction-4">
                 <legend>Physical outside dimensions of the enclosure</legend>
                 <div class="dimension"><label>Height (inch)</label><input type="number" step="any" min="0"></div>
@@ -44,23 +46,10 @@
                 <div class="dimension"><label>Depth (inch)</label><input type="number" step="any" min="0"></div>
                 <div class="dimension"><label>Area (Sq. Ft.)</label><input type="text" readonly="readonly"></div>
             </fieldset>
-            <fieldset>
-                <legend>Insulation R-Value</legend> <select>
-                    <option value="0">None</option>
-                    <option value="1">R-1</option>
-                    <option value="2">R-2</option>
-                    <option value="3">R-3</option>
-                    <option value="4">R-4</option>
-                    <option value="5">R-5</option>
-                    <option value="6">R-6</option>
-                    <option value="7">R-7</option>
-                    <option value="8">R-8</option>
-                    <option value="9">R-9</option>
-                    <option value="10">R-10</option>
-                    <option value="11">R-11</option>
-                    <option value="12">R-12</option>
-                </select>
-            </fieldset>
+
+            <!-- Specyficzne pola -->
+            <div id="specific-fields"></div>
+
             <fieldset id="various">
                 <legend>Various</legend>
                 <div class="form-row">
@@ -69,10 +58,11 @@
                     <span>°F</span>
                 </div>
                 <div class="form-row">
-                    <label>Maximum ambient temperature</label>
+                    <label class="ambient"></label>
                     <input type="number" step="any">
                     <span>°F</span>
                 </div>
+                <div class="temperature"></div>
                 <div class="form-row">
                     <label>Heat dissipated by electronic equipment (watts)</label>
                     <input type="number" step="any">
@@ -95,27 +85,19 @@
                 </div>
             </fieldset>
 
+            <!-- Przyciski -->
             <fieldset class="results">
-                <legend>Recommended Cooling Capacity in BTUH</legend>
+                <legend></legend>
                 <div>Please Fill Out Form</div>
                 <a class="button">Calculate</a>
                 <a class="button">Reset</a>
                 <a href="https://iceqube.com" class="button">Visit IceQube.com</a>
             </fieldset>
         </form>
-
-        <!-- Form Filtered Fan Calculator -->
-        <form id="filtered-fan" class="calculator-form" style="display: none;">
-            <h2>Filtered Fan Calculator</h2>
-            <p>Formularz Filtered Fan Calculator</p>
-        </form>
-
-        <div id="calculator-title-only" style="display: none;">
-            <h2 id="dynamic-title"></h2>
-        </div>
     </div>
 
 
+    <script src="js/data.js"></script>
     <script src="js/sizing-calculator.js"></script>
 </body>
 

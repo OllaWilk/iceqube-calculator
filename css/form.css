@@ -48,6 +48,11 @@ option {
   color: #666;
 }
 
+.tempinfo {
+  font-size: 14px;
+  padding: 10px;
+}
+
 .hz label {
   display: flex;
   align-items: center;

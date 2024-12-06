@@ -1,0 +1,23 @@
+#sizing-calculator {
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+}
+
+.calculator-title {
+  color: #4193cb;
+  font-weight: 300;
+  line-height: 1.25;
+  font-size: 40px;
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 10px;
+}
+
+#calculator-output {
+  font-size: 18px;
+  color: #333;
+  margin-top: 20px;
+  font-weight: bold;
+}

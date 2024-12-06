@@ -1,16 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
   const calculatorType = document.getElementById('calculator-type');
-  const output = document.getElementById('calculator-output');
+  const calculatorForm = document.getElementById('calculator-form');
 
   calculatorType.addEventListener('change', function () {
-    const selectedValue = calculatorType.value;
-    const selectedText =
-      calculatorType.options[calculatorType.selectedIndex].text;
-
-    if (selectedValue === '0') {
-      output.textContent = '';
+    if (calculatorType.value === '0') {
+      calculatorForm.style.display = 'none';
     } else {
-      output.textContent = selectedText;
+      calculatorForm.style.display = 'block';
     }
   });
 });

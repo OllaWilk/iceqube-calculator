@@ -13,14 +13,14 @@
         <h1 for="calculator-type" class="calculator-title">IceQube Sizing Calculator</h1>
         <select id="calculator-type">
             <option value="0">Please Select Calculator Type</option>
-            <option value="1">Air Conditioning Calculator</option>
-            <option value="2">Filtered Fan Calculator</option>
-            <option value="3">Heat Exchanger Calculator</option>
-            <option value="4">Heat Calculator</option>
-            <option value="5">Thermoelectric Calculator</option>
+            <option value="air-conditioning">Air Conditioning Calculator</option>
+            <option value="filtered-fan">Filtered Fan Calculator</option>
+            <option value="heat-exchanger">Heat Exchanger Calculator</option>
+            <option value="heat">Heat Calculator</option>
+            <option value="thermoelectric">Thermoelectric Calculator</option>
         </select>
-
-        <form id="calculator-form" style="display: none;">
+        <!-- Form Air Conditioning Calculator -->
+        <form id="air-conditioning" class="calculator-form" style="display: none;">
             <div class="row-direction-2">
                 <fieldset>
                     <legend>Units</legend>
@@ -103,6 +103,16 @@
                 <a href="https://iceqube.com" class="button">Visit IceQube.com</a>
             </fieldset>
         </form>
+
+        <!-- Form Filtered Fan Calculator -->
+        <form id="filtered-fan" class="calculator-form" style="display: none;">
+            <h2>Filtered Fan Calculator</h2>
+            <p>Formularz Filtered Fan Calculator</p>
+        </form>
+
+        <div id="calculator-title-only" style="display: none;">
+            <h2 id="dynamic-title"></h2>
+        </div>
     </div>
 
 

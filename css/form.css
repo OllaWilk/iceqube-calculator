@@ -81,3 +81,17 @@ option {
     width: 90%;
   }
 }
+
+@media (max-width: 768px) {
+  #various .form-row {
+    flex-wrap: wrap;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-row input {
+    width: 90%;
+  }
+}

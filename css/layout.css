@@ -20,3 +20,10 @@
   gap: 10px;
   max-width: 100%;
 }
+
+@media (max-width: 768px) {
+  .row-direction-2,
+  .row-direction-4 {
+    grid-template-columns: 1fr;
+  }
+}

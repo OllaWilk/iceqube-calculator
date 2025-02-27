@@ -6,11 +6,13 @@ document.addEventListener('DOMContentLoaded', function () {
   const ambientField = document.querySelector('.ambient');
   const resultsLegend = resultsFieldset.querySelector('legend');
   const temperatureInfo = document.querySelector('.temperature');
-  const unitToggle = document.getElementById('unit-toggle');
+  const unitSelector = document.getElementById('unit-selector');
+  const unitDistance = document.querySelectorAll('.unit-distance');
+  const unitArea = document.querySelector('.unit-area');
+  const unitTemp = document.querySelector('.unit-temp');
 
   calculatorType.addEventListener('change', function () {
     const selectedValue = calculatorType.value;
-
     if (selectedValue === '0') {
       formContainer.style.display = 'none';
       specificFields.innerHTML = '';
@@ -25,6 +27,24 @@ document.addEventListener('DOMContentLoaded', function () {
       ambientField.textContent = config.ambient;
       temperatureInfo.innerHTML = config.temperatureInfo || '';
       resultsLegend.textContent = config.resultsLabel;
+    }
+  });
+
+  unitSelector.addEventListener('change', function () {
+    const selectedUnit = unitSelector.value;
+    switch (selectedUnit) {
+      case 'metric':
+        unitDistance.forEach((span) => (span.textContent = '(m)'));
+        unitArea.textContent = '(m²)';
+        unitTemp.textContent = '(°C)';
+        break;
+      case 'standard':
+        unitDistance.forEach((span) => (span.textContent = '(inch)'));
+        unitArea.textContent = '(Sq. Ft.)';
+        unitTemp.textContent = '(°F)';
+        break;
+      default:
+        console.log('Wybrano nieznaną jednostkę');
     }
   });
 });

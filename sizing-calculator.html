@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IceQube Sizing Calculator</title>
+    <title>KALKULATOR HTML</title>
     <link rel="stylesheet" href="assets/css/sizing-calculator.css">
 </head>
 
 <body>
     <div id="sizing-calculator">
-        <h1 class="calculator-title">IceQube Sizing Calculator</h1>
+        <h1 class="calculator-title">Calculator</h1>
         <select id="calculator-type">
             <option value="0">Please Select Calculator Type</option>
             <option value="air-conditioning">Air Conditioning Calculator</option>
@@ -41,18 +41,28 @@
 
             <fieldset class="row-direction-4">
                 <legend>Physical outside dimensions of the enclosure</legend>
-                <div class="dimension"><label>Height <span class="unit-distance">(inch)</span></label><input
-                        type="number" step="any" min="0">
+                <div class="dimension"><label>Height <span class="unit-distance"></span></label><input type="number"
+                        id="height" step="any" min="0">
                 </div>
-                <div class="dimension"><label>Width <span class="unit-distance">(inch)</span></label><input
-                        type="number" step="any" min="0"></div>
-                <div class="dimension"><label>Depth <span class="unit-distance">(inch)</span></label><input
-                        type="number" step="any" min="0"></div>
-                <div class="dimension"><label>Area <span class="unit-area">(Sq. Ft.)</span></label><input type="text"
-                        readonly="readonly"></div>
+                <div class="dimension"><label>Width <span class="unit-distance"></span></label><input type="number"
+                        id="width" step="any" min="0"></div>
+                <div class="dimension"><label>Depth <span class="unit-distance"></span></label><input type="number"
+                        id="depth" step="any" min="0"></div>
+                <div class="dimension"><label>Area <span class="unit-area"></span></label><input type="text"
+                        readonly="readonly" id="area"></div>
             </fieldset>
 
             <!-- Specyficzne pola -->
+            <fieldset>
+                <legend>Is the enclosure in <strong>direct sun</strong>?</legend>
+                <select>
+                    <option value="0">No</option>
+                    <option value="11.1">Yes - Dark Color Enclosure</option>
+                    <option value="8.33">Yes - Medium Color Enclosure</option>
+                    <option value="5.55">Yes - Light Color Enclosure (Stainless)</option>
+
+                </select>
+            </fieldset>
             <div id="specific-fields"></div>
 
             <fieldset id="various">
@@ -60,12 +70,12 @@
                 <div class="form-row">
                     <label>Desired internal enclosure temperature</label>
                     <input type="number" step="any">
-                    <span class="unit-temp">(°F)</span>
+                    <span class="unit-temp"></span>
                 </div>
                 <div class="form-row">
                     <label class="ambient"></label>
                     <input type="number" step="any">
-                    <span class="unit-temp">(°F)</span>
+                    <span class="unit-temp"></span>
                 </div>
                 <div class="temperature"></div>
                 <div class="form-row">
@@ -94,15 +104,17 @@
             <fieldset class="results">
                 <legend></legend>
                 <div>Please Fill Out Form</div>
-                <a class="button">Calculate</a>
-                <a class="button">Reset</a>
+                <a class="button" id="calculate">Calculate</a>
+                <a class="button" id="reset">Reset</a>
                 <a href="https://iceqube.com" class="button">Visit IceQube.com</a>
             </fieldset>
         </form>
     </div>
 
 
+    <script src="assets/js/selectors.js"></script>
     <script src="assets/js/data.js"></script>
+    <script src="assets/js/calculator.js"></script>
     <script src="assets/js/sizing-calculator.js"></script>
 </body>
 

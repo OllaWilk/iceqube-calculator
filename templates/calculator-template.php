@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IceQube Sizing Calculator</title>
-    <link rel="stylesheet" href="css/sizing-calculator.css">
+
 </head>
 
 <body>
@@ -23,11 +23,11 @@
         <form id="shared-form" style="display: none;">
             <!-- Wspólne pola -->
             <div class="row-direction-2">
-                <fieldset >
+                <fieldset>
                     <legend>Units</legend>
-                    <select id="unit-select">
-                        <option value="0">Standard</option>
-                        <option value="1">Metric</option>
+                    <select id="unit-selector">
+                        <option value="standard">Standard</option>
+                        <option value="metric">Metric</option>
                     </select>
                 </fieldset>
                 <fieldset>
@@ -41,10 +41,15 @@
 
             <fieldset class="row-direction-4">
                 <legend>Physical outside dimensions of the enclosure</legend>
-                <div class="dimension"><label>Height (inch)</label><input type="number" step="any" min="0"></div>
-                <div class="dimension"><label>Width (inch)</label><input type="number" step="any" min="0"></div>
-                <div class="dimension"><label>Depth (inch)</label><input type="number" step="any" min="0"></div>
-                <div class="dimension"><label>Area (Sq. Ft.)</label><input type="text" readonly="readonly"></div>
+                <div class="dimension"><label>Height <span class="unit-distance"></span></label><input
+                        type="number" step="any" min="0">
+                </div>
+                <div class="dimension"><label>Width <span class="unit-distance"></span></label><input
+                        type="number" step="any" min="0"></div>
+                <div class="dimension"><label>Depth <span class="unit-distance"></span></label><input
+                        type="number" step="any" min="0"></div>
+                <div class="dimension"><label>Area <span class="unit-area"></span></label><input type="text"
+                        readonly="readonly"></div>
             </fieldset>
 
             <!-- Specyficzne pola -->
@@ -55,12 +60,12 @@
                 <div class="form-row">
                     <label>Desired internal enclosure temperature</label>
                     <input type="number" step="any">
-                    <span>°F</span>
+                    <span class="unit-temp"></span>
                 </div>
                 <div class="form-row">
                     <label class="ambient"></label>
                     <input type="number" step="any">
-                    <span>°F</span>
+                    <span class="unit-temp"></span>
                 </div>
                 <div class="temperature"></div>
                 <div class="form-row">
@@ -95,10 +100,6 @@
             </fieldset>
         </form>
     </div>
-
-
-    <script src="js/data.js"></script>
-    <script src="js/sizing-calculator.js"></script>
 </body>
 
 </html>

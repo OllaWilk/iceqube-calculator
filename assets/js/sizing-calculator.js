@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const ambientField = document.querySelector('.ambient');
   const resultsLegend = resultsFieldset.querySelector('legend');
   const temperatureInfo = document.querySelector('.temperature');
+  const unitToggle = document.getElementById('unit-toggle');
 
   calculatorType.addEventListener('change', function () {
     const selectedValue = calculatorType.value;

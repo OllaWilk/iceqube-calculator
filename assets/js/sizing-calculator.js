@@ -75,7 +75,6 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log(calculator);
     areaInput.value = calculator.area;
 
-    console.log(typeof calculator.area);
     // console.log(formData);
   });
 });

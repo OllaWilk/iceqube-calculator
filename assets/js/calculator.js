@@ -1,20 +1,27 @@
-/* Units selection */
-unitSelector.addEventListener('change', function () {
-  const selectedUnit = unitSelector.value;
-  switch (selectedUnit) {
-    case 'metric':
-      unitDistance.forEach((span) => (span.textContent = '(m)'));
-      unitArea.textContent = '(m²)';
-      unitTemp.forEach((span) => (span.textContent = '(°C)'));
-
-      break;
-    case 'standard':
-      unitDistance.forEach((span) => (span.textContent = '( inch )'));
-      unitArea.textContent = '( ft² )';
-      unitTemp.forEach((span) => (span.textContent = '(°F)'));
-
-      break;
-    default:
-      console.log('invalid units');
+class SizingCalculator {
+  constructor(unit, location, height, width, depth, exposure) {
+    this.unit = 'standard' || String(unit).trim;
+    this.location = location;
+    this.height = null || Number(height).toFixed(2);
+    this.width = null || Number(width).toFixed(2);
+    this.depth = null || Number(depth).toFixed(2);
+    this.area = null;
+    this.exposure = 0 || exposure;
   }
-});
+
+  selectUnits() {
+    return;
+  }
+
+  selectLocation() {
+    return;
+  }
+
+  calculateVolume() {
+    return;
+  }
+
+  calculateArea() {
+    return;
+  }
+}

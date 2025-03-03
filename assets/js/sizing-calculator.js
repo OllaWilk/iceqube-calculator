@@ -24,13 +24,26 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  console.log(resetBtn);
+  /* Units selection */
+  unitSelector.addEventListener('change', function () {
+    if (unitSelector.value === 'metric') {
+      unitDistance.forEach((span) => (span.textContent = '(m)'));
+      unitArea.textContent = '(m²)';
+      unitTemp.forEach((span) => (span.textContent = '(°C)'));
+    } else if (unitSelector.value === 'standard') {
+      unitDistance.forEach((span) => (span.textContent = '( inch )'));
+      unitArea.textContent = '( ft² )';
+      unitTemp.forEach((span) => (span.textContent = '(°F)'));
+    } else {
+      console.log('invalid units');
+    }
+  });
 
   resetBtn.addEventListener('click', () => {
     console.log('reset');
   });
 
   calculate.addEventListener('click', () => {
-    console.log('calculate');
+    const calculator = new SizingCalculator();
   });
 });

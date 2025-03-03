@@ -4,7 +4,7 @@ const calculatorConfigs = {
     additionalFields: `
         <fieldset>
           <legend>Insulation R-Value</legend>
-          <select>
+          <select id="insulation-R-Value">
                 <option value="0">None</option>
                 <option value="1">R-1</option>
                 <option value="2">R-2</option>
@@ -30,7 +30,7 @@ const calculatorConfigs = {
     additionalFields: `
         <fieldset>
           <legend>Fan Operation</legend>
-          <label><input type="checkbox"> Push-Pull</label>
+          <label><input type="checkbox" id="fan-operation"> Push-Pull</label>
         </fieldset>
       `,
     ambient: 'Maximum ambient temperature',
@@ -49,7 +49,7 @@ const calculatorConfigs = {
     additionalFields: `
         <fieldset>
           <legend>Insulation R-Value</legend>
-          <select>
+          <select id="insulation-R-Value">
             <option value="0">None</option>
                 <option value="1">R-1</option>
                 <option value="2">R-2</option>
@@ -74,7 +74,7 @@ const calculatorConfigs = {
     additionalFields: `
         <fieldset>
           <legend>Insulation R-Value</legend>
-          <select>
+          <select id="insulation-R-Value">
            <option value="0">None</option>
                 <option value="1">R-1</option>
                 <option value="2">R-2</option>

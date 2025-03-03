@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
   /* Units selection change */
   unitSelector.addEventListener('change', function () {
     if (unitSelector.value === 'metric') {
-      unitDistance.forEach((span) => (span.textContent = '(m)'));
+      unitDistance.forEach((span) => (span.textContent = '(mm)'));
       unitArea.textContent = '(m²)';
       unitTemp.forEach((span) => (span.textContent = '(°C)'));
     } else if (unitSelector.value === 'standard') {
@@ -73,5 +73,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const calculator = new SizingCalculator(formData);
 
     console.log(calculator);
+    areaInput.value = calculator.area;
+
+    console.log(typeof calculator.area);
+    // console.log(formData);
   });
 });

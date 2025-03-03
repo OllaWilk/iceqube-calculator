@@ -7,24 +7,49 @@ document.addEventListener('DOMContentLoaded', function () {
   /* Acordion Calculator Type */
   calculatorType.addEventListener('change', function () {
     const selectedValue = calculatorType.value;
+
     if (selectedValue === '0') {
       formContainer.style.display = 'none';
       specificFields.innerHTML = '';
       resultsLegend.textContent = '';
       return;
     }
+
     const config = calculatorConfigs[selectedValue];
 
     if (config) {
       formContainer.style.display = 'block';
-      specificFields.innerHTML = config.additionalFields || '';
+      specificFields.innerHTML = '';
+      specificFields.insertAdjacentHTML(
+        'beforeend',
+        config.additionalFields || ''
+      );
+
       ambientField.textContent = config.ambient;
       temperatureInfo.innerHTML = config.temperatureInfo || '';
       resultsLegend.textContent = config.resultsLabel;
     }
   });
 
-  /* Units selection */
+  /* get form values */
+
+  const getFormValues = function () {
+    const formData = {};
+
+    formContainer.querySelectorAll('input, select').forEach((input) => {
+      if (input.type === 'radio') {
+        if (input.checked) formData[input.name] = input.value;
+      } else if (input.type === 'checkbox') {
+        formData[input.name] = input.checked;
+      } else {
+        formData[input.id || input.name] = input.value;
+      }
+    });
+
+    return formData;
+  };
+
+  /* Units selection change */
   unitSelector.addEventListener('change', function () {
     if (unitSelector.value === 'metric') {
       unitDistance.forEach((span) => (span.textContent = '(m)'));
@@ -44,6 +69,9 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   calculate.addEventListener('click', () => {
-    const calculator = new SizingCalculator();
+    const formData = getFormValues();
+    const calculator = new SizingCalculator(formData);
+
+    console.log(calculator);
   });
 });

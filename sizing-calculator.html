@@ -25,17 +25,17 @@
             <div class="row-direction-2">
                 <fieldset>
                     <legend>Units</legend>
-                    <select id="unit-selector">
+                    <select id="unit">
                         <option value="standard">Standard</option>
                         <option value="metric">Metric</option>
                     </select>
                 </fieldset>
                 <fieldset>
                     <legend>Location of Enclosure</legend>
-                    <select id="location-selector">
+                    <select id="location">
                         <!-- TO DO CHECK VALUE -->
-                        <option value="">Indoors</option>
-                        <option value="">Outdoors</option>
+                        <option value="indoors">Indoors</option>
+                        <option value="outdoors">Outdoors</option>
                     </select>
                 </fieldset>
             </div>
@@ -55,7 +55,7 @@
 
             <fieldset>
                 <legend>Is the enclosure in <strong>direct sun</strong>?</legend>
-                <select id="sun-exposure">
+                <select id="sunExposure">
                     <option value="0">No</option>
                     <option value="11.1">Yes - Dark Color Enclosure</option>
                     <option value="8.33">Yes - Medium Color Enclosure</option>
@@ -71,32 +71,32 @@
                 <legend>Various</legend>
                 <div class="form-row">
                     <label>Desired internal enclosure temperature</label>
-                    <input id="desired-internal-enclosure-temperature" type="number" step="any">
+                    <input id="internalTemp" type="number" step="any">
                     <span class="unit-temp"></span>
                 </div>
                 <div class="form-row">
                     <label class="ambient"></label>
-                    <input id="ambient-temperature" type="number" step="any">
+                    <input id="ambientTemp" type="number" step="any">
                     <span class="unit-temp"></span>
                 </div>
                 <div class="temperature"></div>
                 <div class="form-row">
                     <label>Heat dissipated by electronic equipment (watts)</label>
-                    <input type="number" step="any" id="heat-dissipated">
+                    <input type="number" step="any" id="heatDissipation">
                 </div>
                 <div class="row-direction-2">
                     <fieldset class="hz">
                         <legend>Hz Operation</legend>
                         <label>
-                            <input type="radio" value="60" name="hz-operation"> 60Hz
+                            <input type="radio" value="60" name="frequencyHz"> 60Hz
                         </label>
                         <label>
-                            <input type="radio" name="hz-operation" value="50"> 50Hz
+                            <input type="radio" name="frequencyHz" value="50"> 50Hz
                         </label>
                     </fieldset>
                     <fieldset>
                         <legend>OR BTU Per Hour</legend>
-                        <label colspan="2"><input id="or-btu-per-hour" type="number" step="any" class="missing"></label>
+                        <label colspan="2"><input id="btuPerHour" type="number" step="any" class="missing"></label>
                     </fieldset>
                 </div>
             </fieldset>

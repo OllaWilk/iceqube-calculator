@@ -1,6 +1,6 @@
 class SizingCalculator {
   constructor(unit, location, height, width, depth, exposure) {
-    this.unit = 'standard' || String(unit).trim;
+    this.unit = 'standard' || unit;
     this.location = location;
     this.height = null || Number(height).toFixed(2);
     this.width = null || Number(width).toFixed(2);

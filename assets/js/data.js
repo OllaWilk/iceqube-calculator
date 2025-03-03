@@ -4,7 +4,7 @@ const calculatorConfigs = {
     additionalFields: `
         <fieldset>
           <legend>Insulation R-Value</legend>
-          <select id="insulation-R-Value">
+          <select id="rValue">
                 <option value="0">None</option>
                 <option value="1">R-1</option>
                 <option value="2">R-2</option>
@@ -49,7 +49,7 @@ const calculatorConfigs = {
     additionalFields: `
         <fieldset>
           <legend>Insulation R-Value</legend>
-          <select id="insulation-R-Value">
+          <select id="rValue">
             <option value="0">None</option>
                 <option value="1">R-1</option>
                 <option value="2">R-2</option>
@@ -74,7 +74,7 @@ const calculatorConfigs = {
     additionalFields: `
         <fieldset>
           <legend>Insulation R-Value</legend>
-          <select id="insulation-R-Value">
+          <select id="rValue">
            <option value="0">None</option>
                 <option value="1">R-1</option>
                 <option value="2">R-2</option>

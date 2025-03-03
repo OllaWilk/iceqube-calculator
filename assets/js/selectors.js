@@ -1,8 +1,9 @@
 /* Inputs */
+
 /* Units */
-const unitSelector = document.getElementById('unit-selector');
+const unitSelector = document.getElementById('unit');
 /* Location of Enclosure */
-const locationSelector = document.getElementById('location-selector');
+const locationSelector = document.getElementById('location');
 /* Physical outside dimensions of the enclosure */
 const heightInput = document.getElementById('height');
 const widthInput = document.getElementById('width');
@@ -10,19 +11,18 @@ const depthInput = document.getElementById('depth');
 const areaInput = document.getElementById('area');
 
 /* Sun exposure */
-const sunExposureInputs = document.getElementById('sun-exposure');
+const sunExposureInputs = document.getElementById('sunExposure');
 /* Insulation R-Value */
-// const insulationRValue = document.getElementById('specific-fields');
+const insulationRValue = document.getElementById('rValue');
 /* Various */
-const desiredInternalEnclosureTemperature = document.getElementById(
-  'desired-internal-enclosure-temperature'
-);
-const ambientTemperature = document.getElementById('ambient-temperature');
+const desiredInternalEnclosureTemperature =
+  document.getElementById('internalTemp');
+const ambientTemperature = document.getElementById('ambientTemp');
 const heatDissipatedByElectronicEquipment =
-  document.getElementById('heat-dissipated');
+  document.getElementById('heatDissipation');
 
-const hzOperation = document.querySelectorAll('input[name="hz-operation"]');
-const orBTUPerHour = document.getElementById('or-btu-per-hour');
+const hzOperation = document.querySelectorAll('input[name="frequencyHz"]');
+const orBTUPerHour = document.getElementById('btuPerHour');
 const fanOperation = document.getElementById('fan-operation');
 
 const calculatorType = document.getElementById('calculator-type');
@@ -39,32 +39,3 @@ const unitTemp = document.querySelectorAll('.unit-temp');
 
 const resetBtn = document.getElementById('reset');
 const calculateBtn = document.getElementById('calculate');
-
-console.log({
-  unitSelector,
-  locationSelector,
-  heightInput,
-  widthInput,
-  depthInput,
-  areaInput,
-  sunExposureInputs,
-  // insulationRValue,
-  desiredInternalEnclosureTemperature,
-  ambientTemperature,
-  heatDissipatedByElectronicEquipment,
-  hzOperation,
-  orBTUPerHour,
-  fanOperation,
-  calculatorType,
-  formContainer,
-  specificFields,
-  resultsFieldset,
-  ambientField,
-  resultsLegend,
-  temperatureInfo,
-  unitDistance,
-  unitArea,
-  unitTemp,
-  resetBtn,
-  calculateBtn,
-});

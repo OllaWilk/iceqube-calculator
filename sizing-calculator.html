@@ -55,7 +55,7 @@
 
             <fieldset>
                 <legend>Is the enclosure in <strong>direct sun</strong>?</legend>
-                <select id="sunExposure">
+                <select id="SGF">
                     <option value="0">No</option>
                     <option value="11.1">Yes - Dark Color Enclosure</option>
                     <option value="8.33">Yes - Medium Color Enclosure</option>
@@ -71,18 +71,18 @@
                 <legend>Various</legend>
                 <div class="form-row">
                     <label>Desired internal enclosure temperature</label>
-                    <input id="internalTemp" type="number" step="any">
+                    <input id="IT" type="number" step="any">
                     <span class="unit-temp"></span>
                 </div>
                 <div class="form-row">
                     <label class="ambient"></label>
-                    <input id="ambientTemp" type="number" step="any">
+                    <input id="AT" type="number" step="any">
                     <span class="unit-temp"></span>
                 </div>
                 <div class="temperature"></div>
                 <div class="form-row">
                     <label>Heat dissipated by electronic equipment (watts)</label>
-                    <input type="number" step="any" id="heatDissipation">
+                    <input type="number" step="any" id="IH">
                 </div>
                 <div class="row-direction-2">
                     <fieldset class="hz">
@@ -96,7 +96,7 @@
                     </fieldset>
                     <fieldset>
                         <legend>OR BTU Per Hour</legend>
-                        <label colspan="2"><input id="btuPerHour" type="number" step="any" class="missing"></label>
+                        <label colspan="2"><input id="BTU" type="number" step="any" class="missing"></label>
                     </fieldset>
                 </div>
             </fieldset>

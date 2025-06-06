@@ -100,3 +100,7 @@ option {
     width: 90%;
   }
 }
+
+.hidden {
+  display: none !important;
+}

@@ -1,5 +1,3 @@
-/* Inputs */
-
 /* Units */
 const unitSelector = document.getElementById('unit');
 /* Location of Enclosure */
@@ -13,17 +11,13 @@ const areaInput = document.getElementById('area');
 /* Sun exposure */
 const sunExposureInputs = document.getElementById('sunExposure');
 /* Insulation R-Value */
-const insulationRValue = document.getElementById('rValue');
+const insulationRValue = document.getElementById('R');
 /* Various */
 const desiredInternalEnclosureTemperature =
   document.getElementById('internalTemp');
 const ambientTemperature = document.getElementById('ambientTemp');
 const heatDissipatedByElectronicEquipment =
   document.getElementById('heatDissipation');
-
-const hzOperation = document.querySelectorAll('input[name="frequencyHz"]');
-const orBTUPerHour = document.getElementById('btuPerHour');
-const fanOperation = document.getElementById('fan-operation');
 
 const calculatorType = document.getElementById('calculator-type');
 const formContainer = document.getElementById('shared-form');

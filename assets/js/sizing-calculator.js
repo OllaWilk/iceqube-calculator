@@ -43,9 +43,10 @@ document.addEventListener('DOMContentLoaded', function () {
         formData[input.name] = input.checked;
       } else {
         formData[input.id || input.name] = input.value;
+        console.log;
       }
     });
-
+    // console.log('formData', formData);
     return formData;
   };
 
@@ -71,10 +72,25 @@ document.addEventListener('DOMContentLoaded', function () {
   calculate.addEventListener('click', () => {
     const formData = getFormValues();
     const calculator = new SizingCalculator(formData);
-
-    console.log(calculator);
     areaInput.value = calculator.area;
 
-    // console.log(formData);
+    // console.log('UNIT', calculator.unit); //ok
+    // console.log('location', calculator.location); //ok
+
+    // console.log('height', calculator.height); //ok
+    // console.log('width', calculator.width); //ok
+    // console.log('depth', calculator.depth); //ok
+    // console.log('area', calculator.area); //ok
+    // console.log('SGF', calculator.SGF); //ok
+    // console.log('R', calculator.R); //ok
+    // console.log('IT', calculator.IT); //ok
+    // console.log('AT', calculator.AT); //ok
+    // console.log('IH', calculator.IH); //ok
+    // console.log('frequencyHz', calculator.frequencyHz); //ok
+    // console.log('BTU', calculator.BTU); //ok
+    // console.log('U', calculator.U); //ok
+    // console.log('deltaTU', calculator.deltaT); //ok
+
+    // console.log('RCC', calculator.RCC);
   });
 });
